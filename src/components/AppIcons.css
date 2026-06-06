@@ -1,0 +1,59 @@
+#icons .section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+#icons .section-header h2 {
+  font-size: clamp(32px, 4vw, 48px);
+}
+.icons-intro {
+  max-width: 480px;
+  margin: 16px auto 0;
+  font-size: 17px;
+}
+
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.icon-item img {
+  width: 96px;
+  height: 96px;
+  border-radius: 22%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.icon-item img:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+.icon-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cream);
+}
+.icon-tag {
+  font-size: 12px;
+  color: var(--cream-dim);
+  margin-top: -4px;
+}
+.icon-item.free-icon .icon-name::after {
+  content: ' · free';
+  color: var(--accent);
+}
+
+@media (max-width: 560px) {
+  .icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 20px;
+  }
+}

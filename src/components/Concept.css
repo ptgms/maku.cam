@@ -1,0 +1,39 @@
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.concept-text h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 20px;
+}
+.concept-text p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.concept-text p + p {
+  margin-top: 16px;
+}
+
+.concept-frame {
+  transform: rotate(3deg);
+  max-width: 380px;
+  margin: 0 auto;
+}
+.concept-frame .film-caption {
+  font-size: 15px;
+  padding: 14px 16px 18px;
+}
+
+@media (max-width: 768px) {
+  .concept-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .concept-frame {
+    transform: rotate(1.5deg);
+    max-width: 320px;
+  }
+}
