@@ -14,7 +14,7 @@ export default function Footer() {
             Terms of Use
           </a>
         </div>
-        <p className="footer-copy">© 2025 maku. Made with intention.</p>
+        <p className="footer-copy">© 2026 <a href="https://ptgms.space" target="_blank" rel="noopener">Erik / ptgms</a>. Made with intention.</p>
       </div>
     </footer>
   )
