@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section id="hero">
       <div className="container">
-        <span className="eyebrow">for iPhone</span>
+        <span className="eyebrow">for iPhone &amp; Android</span>
         <h1>
           A roll of film,
           <br />

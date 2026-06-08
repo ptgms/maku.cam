@@ -1,16 +1,29 @@
-import { APP_STORE_URL } from './Wordmark.jsx'
+import { useState } from 'react'
+import { detectPlatform } from '../stores.js'
+import { useDownload } from '../download.jsx'
 
-// Apple logo glyph + label, styled as the primary cream CTA.
-export default function AppStoreButton({ children = 'Download on the App Store', className = 'btn-primary' }) {
+// Primary cream CTA. Adapts its label/glyph to the detected platform and
+// routes the click through the shared download handler (store link or modal).
+export default function AppStoreButton({ children, className = 'btn-primary' }) {
+  const download = useDownload()
+  const [platform] = useState(detectPlatform)
+
+  let glyph = null
+  let label = children || 'Download maku'
+  if (!children) {
+    if (platform === 'ios') {
+      glyph = <span className="apple-mark" aria-hidden="true">&#63743;</span>
+      label = 'Download on the App Store'
+    } else if (platform === 'android') {
+      glyph = <span className="play-mark" aria-hidden="true">&#9654;</span>
+      label = 'Get it on Google Play'
+    }
+  }
+
   return (
-    <a
-      href={APP_STORE_URL}
-      className={`btn ${className}`.trim()}
-      target="_blank"
-      rel="noopener"
-    >
-      <span className="apple-mark" aria-hidden="true">&#63743;</span>
-      {children}
+    <a href="#" className={`btn ${className}`.trim()} onClick={download}>
+      {glyph}
+      {label}
     </a>
   )
 }

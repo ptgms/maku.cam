@@ -1,13 +1,14 @@
-import { APP_STORE_URL } from './Wordmark.jsx'
+import { useDownload } from '../download.jsx'
 import './MakuPlus.css'
 
 const PERKS = [
   'Create custom film looks - grain, warmth, contrast, vignette, and more',
-  'Back up your photos to your private iCloud - survives a reinstall or a new phone',
+  'Back up your photos to your private cloud - survives a reinstall or a new phone',
   'Unlock all four app icons',
 ]
 
 export default function MakuPlus() {
+  const download = useDownload()
   return (
     <section id="pro" className="section">
       <div className="container">
@@ -15,7 +16,7 @@ export default function MakuPlus() {
           <div className="pro-text">
             <span className="eyebrow">maku+</span>
             <h2>Unlock everything.</h2>
-            <p className="sub">Custom filters, iCloud backup, and every app icon.</p>
+            <p className="sub">Custom filters, cloud backup, and every app icon.</p>
 
             <ul className="pro-perks">
               {PERKS.map((perk) => (
@@ -23,7 +24,7 @@ export default function MakuPlus() {
               ))}
             </ul>
 
-            <a href={APP_STORE_URL} className="btn btn-primary" target="_blank" rel="noopener">
+            <a href="#" className="btn btn-primary" onClick={download}>
               Get maku+ <span className="maku-plus-badge">maku+</span>
             </a>
             <p className="pro-note">Thanks for supporting maku.</p>
