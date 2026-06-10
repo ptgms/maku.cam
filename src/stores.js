@@ -1,5 +1,5 @@
-export const APP_STORE_URL = '' // todo
-export const PLAY_STORE_URL = '' // todo
+export const APP_STORE_URL = 'https://apps.apple.com/us/app/maku/id6777400463'
+export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=space.ptgms.snap'
 
 // Best-effort guess at the visitor's mobile platform.
 // Returns 'ios', 'android', or null when we can't tell (e.g. desktop).
